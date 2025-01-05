@@ -23,6 +23,7 @@ const cors = require('cors');
 
 const app = express();
 
+const fakeEndpoint = require('./api/fakeEndpoint');
 
 //process.env.NODE_ENV
 //this is set as a config variable at Heroku to production
@@ -67,13 +68,7 @@ app.use(express.static(__dirname + '/build', { maxAge: fiveMinutes }))
 
 
 
-//********************************************************************************
-//* Mongodb APIs
-//********************************************************************************
-// app.get('/api/activity', activity.getAllItems); // NO TOKEN
-// app.post('/api/activity', activity.addItem); // NO TOKEN
-// app.delete('/api/activity/:vuid', activity.deleteAllForUser); // NO TOKEN
-// app.delete('/api/activity/:action', activity.deleteAllByAction); // NO TOKEN
+app.get('/api/fakeEndpoint', fakeEndpoint.fakeData)
 
 
 //********************************************************************************

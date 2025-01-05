@@ -20,6 +20,10 @@
     border-color: gray !important;
 } */
 
+.btn-link {
+    color: white !important;
+}
+
 /* this is a custom class for <Button variant="link" className="btn-link-off"> */
 .btn-link-off {
     color: #333f48 !important;

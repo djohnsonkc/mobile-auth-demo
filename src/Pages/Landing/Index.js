@@ -2,24 +2,15 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import userManager from '../../Helpers/OAuth/userManager';
+import apiHelper from '../../Helpers/OAuth/apiHelper';
 import "./Styles.css";
 
 const Landing = () => {
 
-  const navigate = useNavigate();
-
   const [userData, setUserData] = useState(null)
+  const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
-
-    // const searchParams = new URLSearchParams(window.location.search);
-    // const stay = searchParams.get('stay');
-
-    // if (!stay) {
-    //   setTimeout(() => {
-    //     navigate('/home')
-    //   }, 500);
-    // }
 
     document.title = 'Home | PowerCenter';
 
@@ -34,6 +25,39 @@ const Landing = () => {
 
 
   }, []);
+
+  async function getData(forcedValue) {
+
+    setIsLoading(true)
+
+    // IMPORTANT: Locally, I run the server on port 3100
+    let url = "http://localhost:3100/api/fakeEndpoint";
+    // when running at Heroku
+    if (document.location.href.indexOf('localhost') === -1) {
+      url = "/api/fakeEndpoint";
+    }
+
+    try {
+      // uses axios interceptor to handle 401s by attempting to refresh the token and retry the request
+      const response = await apiHelper.get(url, { forced: forcedValue });
+
+      // if there are dashboards for the user, default the first one to selected
+      if (response.data && response.data.length > 0) {
+
+        // use response.data
+
+      }
+
+      setIsLoading(false)
+
+    }
+    catch {
+      console.log("error fetching data")
+      setIsLoading(false)
+    }
+
+
+  }
 
   return (
     <div className="container-fluid loading d-flex justify-content-center align-items-center vh-100">
@@ -64,6 +88,14 @@ const Landing = () => {
               <>
                 <img src="avatar.png" alt="Avatar" />
                 <h4 className="mt-3">Welcome, {userData.profile.name}</h4>
+
+                <button type="button" className="btn btn-link" onClick={() => getData("200")}>
+                  Get Data
+                </button>
+                <button type="button" className="btn btn-link" onClick={() => getData("401")}>
+                  Get 401
+                </button>
+
               </>
             )}
           </div>
