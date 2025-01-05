@@ -1,0 +1,17 @@
+:root {
+    /* brand colors */
+    --brand-primary-color: #004B87;
+    --brand-secondary-color: #6c757d;
+    /* functional colors success/info/warning/failure */
+    --brand-success-color: #78BE20;
+    --brand-info-color: #EEF2F5;
+    --brand-warning-color: #FFB81C;
+    --brand-danger-color: #E03C31;
+    /* light and dark options */
+    --brand-light-color: #ffffff;
+    --brand-dark-color: #333F48;
+    /* general */
+    --brand-font-color: #333F48;
+    --brand-background-color: #EEF2F5;
+    --brand-info-border-color: lightgray;
+}

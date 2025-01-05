@@ -1,0 +1,38 @@
+/* Kind of like a Bootstrap Card, just simpler */
+section {
+  background-color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 24px;
+  /* margin-top: 12px; */
+}
+/* Media query for mobile devices (Bootstrap's small breakpoint) */
+@media (max-width: 576px) {
+  section {
+    padding: 12px; /* Reduced padding for mobile */
+  }
+}
+
+section .hover-effect:hover {
+  transform: scale(1.004);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12), 0 4px 8px rgba(0, 0, 0, 0.06);
+}
+
+section .bordered {
+  border: 1px solid #ccc;
+}
+
+section .section-active {
+  /* border: solid 1px gray; */
+  transform: scale(1.004);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12), 0 4px 8px rgba(0, 0, 0, 0.06);
+}
+
+section.gray {
+  background-color: #eef2f5 !important;
+}
+
+section .section-sm {
+  padding: 12px !important;
+  margin-bottom: 6px !important;
+}
