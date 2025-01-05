@@ -56,14 +56,14 @@ const Landing = () => {
           <div className="content">
             {!userData && (
               <>
-                <p className="mt-3">Signin should kick off automatically in the real app.</p>
+                <h4 className="mt-3">Sign in to continue.</h4>
 
               </>
             )}
             {userData && (
               <>
                 <img src="avatar.png" alt="Avatar" />
-                <p className="mt-3">Welcome, {userData.profile.name}</p>
+                <h4 className="mt-3">Welcome, {userData.profile.name}</h4>
               </>
             )}
           </div>
@@ -71,12 +71,12 @@ const Landing = () => {
 
 
         <div className="device-footer">
-          <div className="d-grid w-100">
+          <div className="d-flex justify-content-center text-center align-items-center w-100">
             {!userData && (
 
-              <a href="/sign-in-redirect" className="btn btn-outline-light">
+              <button type="button" className="btn btn-outline-light" onClick={() => userManager.signinRedirect()}>
                 Sign In Now
-              </a>
+              </button>
 
             )}
             {userData && (

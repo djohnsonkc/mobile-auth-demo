@@ -10,7 +10,7 @@ const LogoutCallback = () => {
     document.title = 'Logged Out | PowerCenter';
 
     setTimeout(() => {
-      navigate('/landing')
+      navigate('/')
     }, 1);
 
 
