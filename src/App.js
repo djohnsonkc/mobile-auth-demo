@@ -2,6 +2,8 @@ import React, { useEffect } from "react";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
 import "./Styles/App.css";
+import "./Styles/Button.css";
+import "./Styles/Device.css";
 import "./Styles/Section.css";
 
 import PageNotFound from './Pages/404/404';

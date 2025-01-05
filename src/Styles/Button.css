@@ -1,0 +1,67 @@
+/* Bootstrap Button overrides */
+
+.btn-primary {
+    background-color: #004B87 !important;
+    border-color: #004B87 !important;
+}
+
+.btn-secondary {
+    background-color: #888B8B !important;
+    border-color: #888B8B !important;
+}
+
+.btn-success {
+    background-color: #78BE20 !important;
+    border-color: #78BE20 !important;
+}
+
+/* .btn-light {
+    background-color: white !important;
+    border-color: gray !important;
+} */
+
+/* this is a custom class for <Button variant="link" className="btn-link-off"> */
+.btn-link-off {
+    color: #333f48 !important;
+    padding: 0px !important;
+    margin: 0px !important;
+    text-decoration: underline;
+    text-decoration-color: silver !important;
+}
+
+.btn-link-off:hover {
+    color: #67A617 !important;
+    text-decoration: underline !important;
+}
+
+
+/* Default button style */
+.btn-outline-light {
+    background-color: transparent !important;
+    border-color: white !important;
+    color: white !important; /* Adjust text color as needed */
+}
+
+/* Hover state */
+.btn-outline-light:hover {
+    background-color: transparent !important; /* Light gray for hover */
+    border-color: #f8f9fa !important;
+    color: white !important;
+}
+
+/* Focus state */
+.btn-outline-light:focus {
+    background-color: transparent !important;
+    border-color: #f8f9fa !important;
+    color: white !important;
+    box-shadow: none !important; /* Remove focus outline if desired */
+}
+
+/* Active state */
+.btn-outline-light:active, .btn-outline-light.active {
+    background-color: transparent !important; /* Slightly darker gray for active */
+    border-color: #e0e0e0 !important;
+    color: white !important;
+    box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125) !important;
+}
+

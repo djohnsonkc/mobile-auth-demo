@@ -1,0 +1,86 @@
+.device-container {
+  display: flex;
+  flex-direction: column; /* Stack header, content, and footer vertically */
+  justify-content: space-between; /* Footer stays at the bottom */
+  align-items: center;
+  text-align: center;
+
+  width: 375px; /* Simulating mobile width */
+  height: 667px; /* Simulating mobile height */
+  background-color: #004B87;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  color: white;
+  position: relative; /* Ensure footer is relative to this container */
+}
+
+.device-header {
+  width: 100%; /* Full width of device-container */
+  height: 50px; /* Fixed height */
+  background-color: #004B87; /* Header background */
+  display: flex;
+  justify-content: space-between; /* Spread out content */
+  align-items: center; /* Center content vertically */
+  padding: 0 15px; /* Add horizontal padding */
+  color: white; /* Text color */
+  font-size: 18px; /* Title font size */
+  font-weight: bold;
+}
+
+.device-header .icon {
+  display: flex;
+  align-items: center;
+}
+
+.device-header .icon img {
+  height: 35px; /* Icon size */
+  width: 35px; /* Icon size */
+}
+
+.device-header .title {
+  flex: 1; /* Let the title take up remaining space */
+  text-align: center; /* Center align the title */
+}
+
+.device-header .hamburger {
+  display: flex;
+  align-items: center;
+}
+
+.device-header .hamburger img {
+  height: 24px; /* Hamburger icon size */
+  width: 24px; /* Hamburger icon size */
+}
+
+
+.device-content {
+  flex: 1; /* Take up remaining vertical space */
+  display: flex;
+  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Center content vertically */
+  padding: 40px; /* Optional: Adjust padding as needed */
+}
+
+
+.device-footer {
+  width: 100%; /* Full width of the device-container */
+  height: 80px; /* Footer height */
+  background-color: #004B87; /* Footer background */
+  display: flex;
+  justify-content: space-between; /* Space between elements */
+  align-items: center; /* Center vertically */
+  padding: 0 15px; /* Add horizontal padding */
+  color: white; /* Footer text color */
+  font-size: 16px; /* Optional: Footer text size */
+}
+
+@media (max-width: 375px) {
+  .device-container {
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+    box-shadow: none;
+  }
+}

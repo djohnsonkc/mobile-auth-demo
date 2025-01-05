@@ -1,12 +1,14 @@
 
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-
+import userManager from '../../Helpers/OAuth/userManager';
 import "./Styles.css";
 
 const Landing = () => {
 
   const navigate = useNavigate();
+
+  const [userData, setUserData] = useState(null)
 
   useEffect(() => {
 
@@ -21,34 +23,78 @@ const Landing = () => {
 
     document.title = 'Home | PowerCenter';
 
+    async function getUser() {
+      const user = await userManager.getUser();
+      console.log("user", user)
+      if (user && user.access_token) {
+        setUserData(user)
+      }
+    }
+    getUser()
+
+
   }, []);
 
   return (
-    <div className="container-fluid loading">
+    <div className="container-fluid loading d-flex justify-content-center align-items-center vh-100">
 
+      <div className="device-container">
 
-      <div className="row justify-content-md-center mb-5 pt-3">
-        <div className="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
-
-
-
-
-          <div className="container-fluid vh-100 d-flex justify-content-center align-items-center bg-light">
-            <div className="device-container d-flex justify-content-center align-items-center">
-              <div className="content">
-                <h3>Mobile Content</h3>
-                <p>This container adapts to your viewport size.</p>
-                <a href="/sign-in-redirect" className="btn btn-primary">Sign In</a>
-              </div>
-            </div>
+        <div className="device-header">
+          <div className="icon">
+            <img src="rosnet-icon.svg" alt="Left Icon" />
           </div>
-
-
+          <div className="title">
+            Mobile App
+          </div>
+          <div className="hamburger">
+            <img src="hamburger.png" alt="Menu" />
+          </div>
         </div>
+
+        <div className="device-content">
+          <div className="content">
+            {!userData && (
+              <>
+                <p className="mt-3">Signin should kick off automatically in the real app.</p>
+
+              </>
+            )}
+            {userData && (
+              <>
+                <img src="avatar.png" alt="Avatar" />
+                <p className="mt-3">Welcome, {userData.profile.name}</p>
+              </>
+            )}
+          </div>
+        </div>
+
+
+        <div className="device-footer">
+          <div className="d-grid w-100">
+            {!userData && (
+
+              <a href="/sign-in-redirect" className="btn btn-outline-light">
+                Sign In Now
+              </a>
+
+            )}
+            {userData && (
+              <a href="/logout" className="btn btn-outline-light">
+                Sign Out
+              </a>
+
+            )}
+          </div>
+        </div>
+
       </div>
 
 
     </div>
+
+
+
   );
 }
 
