@@ -14,7 +14,7 @@ const Landing = () => {
 
   useEffect(() => {
 
-    document.title = 'Home | PowerCenter';
+    document.title = 'Home | Mobile';
 
     async function getUser() {
       const user = await userManager.getUser();
@@ -117,16 +117,16 @@ const Landing = () => {
           <div className="content">
             {!userData && (
               <>
-                <h4 className="mt-3">Sign in to continue.</h4>
+                <h4 className="mt-3">Authorization Code Flow with PKCE (Proof Key for Code Exchange)</h4>
 
-                <p>When redirected to the Identity Provider's login, use these credentials:</p>
-
+                <p>This is a POC to demonstrate using Authorization Code Flow with PKCE (Proof Key for Code Exchange) and leveraging the Identity Provider's login screen instead of our own.</p>
 
                 {/* <ul className="list-group">
                   <li className="list-group-item">Email: test@test.com</li>
                   <li className="list-group-item">Password: Testing123!</li>
                 </ul> */}
 
+                <p>When redirected to the Identity Provider's login, use these credentials:</p>
 
                 <div className="input-group flex-nowrap">
                   <span className="input-group-text" id="addon-wrapping"><AtSign size={16} /></span>

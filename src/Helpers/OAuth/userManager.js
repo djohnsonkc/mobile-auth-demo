@@ -16,7 +16,7 @@ let defaultSettings = {
     redirect_uri:  'http://localhost:3000/callback',
     response_type: 'code',
     scope: 'openid profile',
-    audience: 'mobile-auth-demo-custom-api',
+    audience: 'https://dev-rxr5aoysvin02xuq.us.auth0.com/api/v2/',
     post_logout_redirect_uri: 'http://localhost:3000/logout-callback',
 }
 console.log("host", window.location.host)
@@ -27,7 +27,7 @@ if(window.location.host.includes("herokuapp.com")) {
         redirect_uri:  'https://mobile-auth-demo-0cca0203e2fb.herokuapp.com/callback',
         response_type: 'code',
         scope: 'openid profile',
-        audience: 'mobile-auth-demo-custom-api',
+        audience: 'https://dev-rxr5aoysvin02xuq.us.auth0.com/api/v2/',
         post_logout_redirect_uri: 'https://mobile-auth-demo-0cca0203e2fb.herokuapp.com/logout-callback',
     }
 }
