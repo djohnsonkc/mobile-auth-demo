@@ -24,11 +24,11 @@ if(window.location.host.includes("herokuapp.com")) {
     defaultSettings = {
         authority: 'https://dev-rxr5aoysvin02xuq.us.auth0.com',
         client_id: 'kqk5k5gQsqsR4kUsNImMQPgSVHiIUyb1',
-        redirect_uri:  'https://www.rosui.dev/callback',
+        redirect_uri:  'https://mobile-auth-demo-2e1ef6d08590.herokuapp.com/callback',
         response_type: 'code',
         scope: 'openid profile',
         audience: 'mobile-auth-demo-custom-api',
-        post_logout_redirect_uri: 'https://www.rosui.dev/logout-callback',
+        post_logout_redirect_uri: 'https://mobile-auth-demo-2e1ef6d08590.herokuapp.com/logout-callback',
     }
 }
 
