@@ -71,6 +71,20 @@ const Landing = () => {
     console.log("user still active after countdown?", user, "expired?", user.expires_at > currentTime)
   }
 
+  function getJson() {
+    const settings = {
+      authority: 'https://dev-k1j3j4k3.us.auth0.com',
+      client_id: 'jakdjfakjiejadkfjakdjfakjdfk',
+      redirect_uri: 'http://localhost:3000/callback',
+      response_type: 'code',
+      scope: 'openid profile',
+      audience: 'mobile-auth-demo-custom-api',
+      post_logout_redirect_uri: 'http://localhost:3000/logout-callback'
+    }
+
+    return JSON.stringify(settings, null, 2)
+  }
+
   return (
     <div className="container-fluid loading d-flex justify-content-center align-items-center vh-100">
 
@@ -91,9 +105,9 @@ const Landing = () => {
               </button>
 
               <ul className="dropdown-menu" aria-labelledby="hamburgerMenu">
-                <li><a className="dropdown-item" href="#action1">Action 1</a></li>
-                <li><a className="dropdown-item" href="#action2">Action 2</a></li>
-                <li><a className="dropdown-item" href="#action3">Action 3</a></li>
+                <li><a className="dropdown-item" href="#action1" data-bs-toggle="modal" data-bs-target="#settingsModal">Identity Provider Settings</a></li>
+                {/* <li><a className="dropdown-item" href="#action2">Action 2</a></li>
+                <li><a className="dropdown-item" href="#action3">Action 3</a></li> */}
               </ul>
             </div>
           </div>
@@ -161,6 +175,33 @@ const Landing = () => {
 
       </div>
 
+
+      <div class="modal" id="settingsModal">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Identity Provider Settings</h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <p>This is where you could use your own Identity Provider Settings....</p>
+
+              <textarea rows="10" className="w-100 b-none" value={getJson()}>
+              </textarea>
+
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary text-uppercase" data-bs-dismiss="modal">CLOSE</button>
+              <button type="button" class="btn btn-primary text-uppercase" id="saveSettingsButton" data-bs-dismiss="modal">SAVE</button>
+            </div>
+          </div>
+        </div>
+      </div>
 
     </div>
 
