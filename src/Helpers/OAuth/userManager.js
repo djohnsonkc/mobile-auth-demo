@@ -20,7 +20,7 @@ let defaultSettings = {
     post_logout_redirect_uri: 'http://localhost:3000/logout-callback',
 }
 console.log("host", window.location.host)
-if(window.location.host.includes("rosuidev")) {
+if(window.location.host.includes("herokuapp.com")) {
     defaultSettings = {
         authority: 'https://dev-rxr5aoysvin02xuq.us.auth0.com',
         client_id: 'kqk5k5gQsqsR4kUsNImMQPgSVHiIUyb1',
