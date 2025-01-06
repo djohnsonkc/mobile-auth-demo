@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { userManager } from '../../Helpers/OAuth/userManager';
 import apiHelper from '../../Helpers/OAuth/apiHelper';
 import CountdownTimer from "../../Components/CountdownTimer";
+import { Lock, AtSign } from "react-feather";
 import "./Styles.css";
 
 const Landing = () => {
@@ -104,6 +105,23 @@ const Landing = () => {
               <>
                 <h4 className="mt-3">Sign in to continue.</h4>
 
+                <p>When redirected to the Identity Provider's login, use these credentials:</p>
+
+
+                {/* <ul className="list-group">
+                  <li className="list-group-item">Email: test@test.com</li>
+                  <li className="list-group-item">Password: Testing123!</li>
+                </ul> */}
+
+
+                <div className="input-group flex-nowrap">
+                  <span className="input-group-text" id="addon-wrapping"><AtSign size={16} /></span>
+                  <input type="text" className="form-control" placeholder="Username" aria-label="Username" aria-describedby="addon-wrapping" value="test@test.com" disabled />
+                </div>
+                <div className="input-group flex-nowrap mt-1">
+                  <span className="input-group-text" id="addon-wrapping"><Lock size={16} /></span>
+                  <input type="text" className="form-control" placeholder="Username" aria-label="Username" aria-describedby="addon-wrapping" value="Testing123!" disabled />
+                </div>
               </>
             )}
             {userData && (

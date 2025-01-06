@@ -32,7 +32,7 @@ const CountdownTimer = ({ start, seconds, onFinish }) => {
 
   return (
     <div>
-      <h1>Countdown: {currentValue}</h1>
+      <p>Token Expires In: {currentValue}</p>
     </div>
   );
 };
