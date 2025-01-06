@@ -1,8 +1,9 @@
 
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import userManager from '../../Helpers/OAuth/userManager';
+import { userManager } from '../../Helpers/OAuth/userManager';
 import apiHelper from '../../Helpers/OAuth/apiHelper';
+import CountdownTimer from "../../Components/CountdownTimer";
 import "./Styles.css";
 
 const Landing = () => {
@@ -39,7 +40,7 @@ const Landing = () => {
 
     try {
       // uses axios interceptor to handle 401s by attempting to refresh the token and retry the request
-      const response = await apiHelper.get(url, { forced: forcedValue });
+      const response = await apiHelper.get(url, { page: 1 });
 
       // if there are dashboards for the user, default the first one to selected
       if (response.data && response.data.length > 0) {
@@ -59,6 +60,16 @@ const Landing = () => {
 
   }
 
+  async function onCountdownFinish() {
+    const currentTime = Math.floor(Date.now() / 1000); // Current time in seconds
+    const user = await userManager.getUser();
+    if (user && user.expires_at) {
+
+      //return user.expires_at > currentTime; // Token is valid if expiration time is in the future
+    }
+    console.log("user still active after countdown?", user, "expired?", user.expires_at > currentTime)
+  }
+
   return (
     <div className="container-fluid loading d-flex justify-content-center align-items-center vh-100">
 
@@ -72,7 +83,18 @@ const Landing = () => {
             Mobile App
           </div>
           <div className="hamburger">
-            <img src="hamburger.png" alt="Menu" />
+
+            <div className="dropdown">
+              <button className="btn btn-link dropdown-toggle no-caret no-focus" type="button" id="hamburgerMenu" data-bs-toggle="dropdown" aria-expanded="false">
+                <img src="hamburger.png" alt="Menu" />
+              </button>
+
+              <ul className="dropdown-menu" aria-labelledby="hamburgerMenu">
+                <li><a className="dropdown-item" href="#action1">Action 1</a></li>
+                <li><a className="dropdown-item" href="#action2">Action 2</a></li>
+                <li><a className="dropdown-item" href="#action3">Action 3</a></li>
+              </ul>
+            </div>
           </div>
         </div>
 
@@ -89,11 +111,10 @@ const Landing = () => {
                 <img src="avatar.png" alt="Avatar" />
                 <h4 className="mt-3">Welcome, {userData.profile.name}</h4>
 
+                <CountdownTimer start={12} seconds={1} onFinish={onCountdownFinish} />
+
                 <button type="button" className="btn btn-link" onClick={() => getData("200")}>
                   Get Data
-                </button>
-                <button type="button" className="btn btn-link" onClick={() => getData("401")}>
-                  Get 401
                 </button>
 
               </>

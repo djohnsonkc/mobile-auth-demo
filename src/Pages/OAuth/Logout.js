@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import userManager from '../../Helpers/OAuth/userManager';
+import { userManager } from '../../Helpers/OAuth/userManager';
 
 const Logout = () => {
     const navigate = useNavigate();

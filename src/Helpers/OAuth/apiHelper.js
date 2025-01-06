@@ -1,5 +1,5 @@
 import axios from 'axios';
-import userManager from './userManager';
+import { userManager } from './userManager';
 
 // Create an Axios instance
 const apiClient = axios.create({
@@ -16,10 +16,6 @@ apiClient.interceptors.request.use(async config => {
     console.log("axios intercept request with user", user)
     if (user && user.access_token) {
         config.headers['Authorization'] = `Bearer ${user.access_token}`;
-    }
-    // this was added just for testing
-    else {
-        config.headers['Authorization'] = `Bearer access-token-is-missing`;
     }
     return config;
 });

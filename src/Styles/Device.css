@@ -84,3 +84,19 @@
     box-shadow: none;
   }
 }
+
+
+.no-caret::after {
+  display: none !important;
+}
+
+.no-focus:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+#hamburgerMenu:focus,
+#hamburgerMenu[data-bs-toggle="dropdown"]:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
