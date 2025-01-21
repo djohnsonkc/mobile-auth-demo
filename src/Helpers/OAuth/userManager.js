@@ -41,6 +41,8 @@ if (window.location.host.includes("herokuapp.com")) {
     }
 }
 
+console.log("userManager", defaultSettings)
+
 const userManager = new UserManager(defaultSettings);
 
 userManager.events.addAccessTokenExpiring(() => {

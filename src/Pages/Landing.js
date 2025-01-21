@@ -25,9 +25,9 @@ const Landing = () => {
         navigate('/home')
       }
       else {
-        setTimeout(() => {
-          userManager.signinRedirect()
-        },1000)
+        // setTimeout(() => {
+        //   userManager.signinRedirect()
+        // },1000)
       }
     }
     getUser()
@@ -36,43 +36,54 @@ const Landing = () => {
   }, []);
 
 
-
-  async function onCountdownFinish() {
-    const currentTime = Math.floor(Date.now() / 1000); // Current time in seconds
-    const user = await userManager.getUser();
-    if (user && user.expires_at) {
-
-      //return user.expires_at > currentTime; // Token is valid if expiration time is in the future
-    }
-    console.log("user still active after countdown?", user, "expired?", user.expires_at > currentTime)
+  function redirectToAuthProvider() {
+    userManager.signinRedirect()
   }
 
-  function getJson() {
-    const settings = {
-      authority: 'https://dev-k1j3j4k3.us.auth0.com',
-      client_id: 'jakdjfakjiejadkfjakdjfakjdfk',
-      redirect_uri: 'http://localhost:3000/callback',
-      response_type: 'code',
-      scope: 'openid profile',
-      audience: 'mobile-auth-demo-custom-api',
-      post_logout_redirect_uri: 'http://localhost:3000/logout-callback'
-    }
-
-    return JSON.stringify(settings, null, 2)
-  }
 
   return (
-    <div className="container-fluid loading d-flex justify-content-center align-items-center vh-100" style={{ backgroundColor: "#004B87" }}>
 
-      <div className="device-content">
-        <div className="content">
 
-          <img src="rosnet-icon-400.svg" height="200" width="200" alt="Rosnet Logo" />
 
+    <div className="container-fluid loading d-flex justify-content-center align-items-center vh-100">
+      <div className="device-container">
+        <div className="device-header"></div>
+
+        <div className="device-body primary d-flex justify-content-center align-items-center">
+          <div className="content text-center">
+            <img
+              src="rosnet-logo.png"
+              alt="Logo"
+              style={{ marginTop: 10, maxWidth: 300 }}
+            />
+          </div>
+        </div>
+
+        <div className="device-footer">
+          <div className="d-flex justify-content-center text-center align-items-center w-100">
+            <button type="button" onClick={() => redirectToAuthProvider()} className="btn btn-primary-outline" style={{
+              backgroundColor: "transparent",
+              color: "white",
+              border: "1px solid white",
+              padding: "10px 20px",
+              borderRadius: 20
+            }}>
+              Login Now
+            </button>
+          </div>
         </div>
       </div>
-
     </div>
+
+
+
+
+
+
+
+
+
+
 
 
 

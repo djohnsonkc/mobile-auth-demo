@@ -18,6 +18,9 @@ const Home = () => {
 
   useEffect(() => {
 
+    const searchParams = new URLSearchParams(window.location.search);
+    const showAnyway = searchParams.get('showAnyway');
+
     document.title = 'RosApp';
 
     async function getUser() {
@@ -28,7 +31,14 @@ const Home = () => {
       }
       else {
         // userManager.signinRedirect()
-        navigate('/')
+
+        if(showAnyway) {
+          setUserData({ access_token: "faked" })
+        }
+        else {
+          navigate('/')
+        }
+
       }
     }
     getUser()
@@ -234,31 +244,28 @@ const Home = () => {
               <div className="icon-wrapper">
               <DynamicIcon iconName="Bell" color="white" size={24} />
               </div>
-              <p className="footer-text">Notifications</p>
+              <p className="footer-label">Notifications</p>
             </div>
             <div className="footer-item">
               <div className="icon-wrapper">
               <DynamicIcon iconName="BarChart2"  color="white" size={24} />
               </div>
-              <p className="footer-text">Dashboards</p>
+              <p className="footer-label">Dashboards</p>
             </div>
             <div className="footer-item">
               <div className="icon-wrapper">
               <DynamicIcon iconName="MessageCircle"  color="white" size={24} />
               </div>
-              <p className="footer-text">Chat</p>
+              <p className="footer-label">Chat</p>
             </div>
             <div className="footer-item">
               <div className="icon-wrapper">
               <DynamicIcon iconName="User" color="white" size={24} />
               </div>
-              <p className="footer-text">Profile</p>
+              <p className="footer-label">Profile</p>
             </div>
           </div>
-
-
         </div>
-
       </div>
 
 
