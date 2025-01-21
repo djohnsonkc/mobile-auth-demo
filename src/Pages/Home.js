@@ -181,6 +181,7 @@ const Home = () => {
             tabIndex="-1"
             id="offcanvasExample"
             aria-labelledby="offcanvasExampleLabel"
+            // data-bs-backdrop="false"
             style={{
               position: 'absolute',
               top: 0,
@@ -192,7 +193,8 @@ const Home = () => {
             }}
           >
             <div className="offcanvas-header">
-              <h5 className="offcanvas-title" id="offcanvasExampleLabel">RosApp Menu</h5>
+              {/* <h5 className="offcanvas-title" id="offcanvasExampleLabel">RosApp Menu</h5> */}
+              <img src="rosnet-logo.png" alt="Logo" style={{ marginTop: 10, maxWidth: 200 }} />
               <button
                 type="button"
                 className="btn-close btn-close-white text-reset"
@@ -202,6 +204,7 @@ const Home = () => {
             </div>
             <div className="offcanvas-body">
 
+              
               <ul className="list-unstyled text-white">
                 <li className="mb-2">
                   <a
