@@ -106,7 +106,7 @@
   /* Space between elements */
   align-items: center;
   /* Center vertically */
-  padding: 0 15px;
+  padding: 0 15px 10px;
   /* Add horizontal padding */
   color: white;
   /* Footer text color */
@@ -146,6 +146,7 @@
 .footer-item {
   text-align: center;
   transition: transform 0.2s, background-color 0.2s;
+  width: 25%; 
 }
 
 .icon-wrapper {
