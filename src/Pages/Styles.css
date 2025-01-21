@@ -1,0 +1,55 @@
+/* Kind of like a Bootstrap Card, just simpler */
+.list-item {
+    background-color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 12px;
+    /* margin-top: 12px; */
+}
+
+/* Media query for mobile devices (Bootstrap's small breakpoint) */
+@media (max-width: 576px) {
+    .list-item {
+        padding: 12px;
+        /* Reduced padding for mobile */
+    }
+}
+
+.list-item .hover-effect:hover {
+    transform: scale(1.004);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12), 0 4px 8px rgba(0, 0, 0, 0.06);
+}
+
+.list-item.hover-effect-with-pointer:hover {
+    cursor: pointer;
+    transform: scale(1.004);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12), 0 4px 8px rgba(0, 0, 0, 0.06);
+}
+
+.list-item .bordered {
+    border: 1px solid #ccc;
+}
+
+.list-item .list-item-active {
+    /* border: solid 1px gray; */
+    transform: scale(1.004);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12), 0 4px 8px rgba(0, 0, 0, 0.06);
+}
+
+.list-item.gray {
+    background-color: #eef2f5 !important;
+}
+
+.list-item .list-item-sm {
+    padding: 12px !important;
+    margin-bottom: 6px !important;
+}
+
+.list-item .title {
+    font-size: 14px;
+    font-weight: 550;
+}
+
+.list-item .description {
+    font-size: 13px;
+}

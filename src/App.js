@@ -7,8 +7,8 @@ import "./Styles/Device.css";
 import "./Styles/Section.css";
 
 import PageNotFound from './Pages/404/404';
-import Landing from './Pages/Landing/Index';
-// import Loading from './Pages/Loading/Index';
+import Landing from './Pages/Landing';
+import Home from './Pages/Home';
 
 import Callback from "./Pages/OAuth/Callback"; // 
 import Logout from "./Pages/OAuth/Logout"; // 
@@ -29,6 +29,8 @@ function App() {
 
                     {/* This is the new combo landing page that lets the user build their own dashboard and display it as the landing page */}
                     <Route element={<Landing />} path="/" />
+
+                    <Route element={<Home />} path="/home" />
 
 
                     <Route element={<Callback />} path="/callback" />

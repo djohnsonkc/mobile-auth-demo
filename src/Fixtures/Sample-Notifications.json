@@ -1,0 +1,62 @@
+[
+  {
+    "title": "Inventory Low on Key Items",
+    "description": "Stock of chicken breasts is running low. Order soon to avoid running out during service.",
+    "category": "Inventory",
+    "icon": "List"
+  },
+  {
+    "title": "New Employee Orientation Scheduled",
+    "description": "John Doe's orientation is scheduled for tomorrow at 9:00 AM.",
+    "category": "Staffing",
+    "icon": "Users"
+  },
+  {
+    "title": "Health Inspection Scheduled",
+    "description": "A health inspection is planned for next Wednesday at 10:00 AM. Ensure compliance.",
+    "category": "Compliance",
+    "icon": "UserCheck"
+  },
+  {
+    "title": "Positive Customer Feedback",
+    "description": "A diner praised the excellent service provided by Sarah during dinner service.",
+    "category": "Feedback",
+    "icon": "Star"
+  },
+  {
+    "title": "Shift Swap Request",
+    "description": "Jane Doe has requested to swap her Saturday evening shift with John Smith.",
+    "category": "Staffing",
+    "icon": "Shuffle"
+  },
+  {
+    "title": "Menu Item Popularity Report",
+    "description": "The spicy tuna rolls were the top-selling dish last week. Consider preparing additional portions.",
+    "category": "Reports",
+    "icon": "Report"
+  },
+  {
+    "title": "Reservation Update",
+    "description": "A party of 10 has been added for Saturday evening at 7:00 PM. Adjust table assignments as needed.",
+    "category": "Reservations",
+    "icon": "Bell"
+  },
+  {
+    "title": "Equipment Maintenance Reminder",
+    "description": "The walk-in freezer is due for routine maintenance next Monday at 3:00 PM.",
+    "category": "Maintenance",
+    "icon": "Bell"
+  },
+  {
+    "title": "Training Session Reminder",
+    "description": "A food safety training session is scheduled for all kitchen staff this Friday at 2:00 PM.",
+    "category": "Training",
+    "icon": "Bell"
+  },
+  {
+    "title": "Payroll Update",
+    "description": "Employee payroll has been processed for this period. Please review and approve.",
+    "category": "Admin",
+    "icon": "DollarSign"
+  }
+]
