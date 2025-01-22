@@ -1,35 +1,26 @@
 import { defaults } from 'lodash';
 import { UserManager } from 'oidc-client-ts';
 
-// const userManager = new UserManager({
-//     authority: process.env.REACT_APP_OAUTH_AUTHORITY, //'https://iam.rosnetqa.com',
+// let defaultSettings = {
+//     authority: process.env.REACT_APP_OAUTH_AUTHORITY,
 //     client_id: process.env.REACT_APP_OAUTH_CLIENT_ID,
-//     redirect_uri: process.env.REACT_APP_OAUTH_CALLBACK_URI, //'http://localhost:3000/callback',
+//     redirect_uri: process.env.REACT_APP_OAUTH_CALLBACK_URI,
 //     response_type: 'code',
 //     scope: process.env.REACT_APP_OAUTH_SCOPE,
-//     post_logout_redirect_uri: process.env.REACT_APP_OAUTH_POST_LOGOUT_REDIRECT_URI //'http://localhost:3000',
-// });
-
-// let defaultSettings = {
-//     authority: 'https://dev-rxr5aoysvin02xuq.us.auth0.com',
-//     client_id: 'kqk5k5gQsqsR4kUsNImMQPgSVHiIUyb1',
-//     redirect_uri:  'http://localhost:3000/callback',
-//     response_type: 'code',
-//     scope: 'openid profile',
-//     audience: 'https://dev-rxr5aoysvin02xuq.us.auth0.com/api/v2/',
-//     post_logout_redirect_uri: 'http://localhost:3000/logout-callback',
+//     post_logout_redirect_uri: process.env.REACT_APP_OAUTH_POST_LOGOUT_REDIRECT_URI
 // }
 
+// localhost uses dev
 let defaultSettings = {
-    authority: process.env.REACT_APP_OAUTH_AUTHORITY,
-    client_id: process.env.REACT_APP_OAUTH_CLIENT_ID,
-    redirect_uri: process.env.REACT_APP_OAUTH_CALLBACK_URI,
+    authority: 'https://iam.rosnetdev.com',
+    client_id: 'mobile.RosApp.Rosnet',
+    redirect_uri:  'http://localhost:3000/callback',
     response_type: 'code',
-    scope: process.env.REACT_APP_OAUTH_SCOPE,
-    post_logout_redirect_uri: process.env.REACT_APP_OAUTH_POST_LOGOUT_REDIRECT_URI
+    scope: 'openid profile ROS.MS.SalesService',
+    post_logout_redirect_uri: 'http://localhost:3000/logout-callback',
 }
 
-console.log("host", window.location.host)
+// Heroku uses QA
 if (window.location.host.includes("herokuapp.com")) {
     defaultSettings = {
         authority: 'https://iam.rosnetqa.com',
@@ -41,7 +32,7 @@ if (window.location.host.includes("herokuapp.com")) {
     }
 }
 
-console.log("userManager", defaultSettings)
+console.log("userManager", JSON.stringify(defaultSettings, null, 2))
 
 const userManager = new UserManager(defaultSettings);
 

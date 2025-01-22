@@ -116,7 +116,7 @@ const Home = () => {
   }
 
   return (
-    <div className="container-fluid loading d-flex justify-content-center align-items-center vh-100">
+    <div className="container-fluid d-flex justify-content-center align-items-center vh-100">
 
       <div className="device-container">
 
@@ -148,7 +148,7 @@ const Home = () => {
                 <div className="d-flex flex-column align-items-center">
                   <div className="w-100">
 
-                    {sampleNotifications.slice(0, 5).map((notif, index) => {
+                    {sampleNotifications.map((notif, index) => {
                       return (
                         <div
                           key={index}

@@ -71,15 +71,20 @@
 
 .device-body {
   flex: 1;
-  /* Take up remaining vertical space */
   display: flex;
-  /* justify-content: center;  */
-  /* align-items: center;  */
   padding: 8px;
-  /* height: 100%; */
-  /* width: 100%; */
   background-color: #EEF2F5;
+
+  -ms-overflow-style: none;
+  /* for Internet Explorer, Edge */
+  scrollbar-width: none;
+  /* for Firefox */
+  overflow-y: scroll;
 }
+.device-body:hover {
+  scrollbar-width: 15px !important;
+}
+
 .device-body.primary {
   background-color: #004B87;
 }

@@ -33,13 +33,13 @@
     "title": "Menu Item Popularity Report",
     "description": "The spicy tuna rolls were the top-selling dish last week. Consider preparing additional portions.",
     "category": "Reports",
-    "icon": "Report"
+    "icon": "FileText"
   },
   {
     "title": "Reservation Update",
     "description": "A party of 10 has been added for Saturday evening at 7:00 PM. Adjust table assignments as needed.",
     "category": "Reservations",
-    "icon": "Bell"
+    "icon": "Clock"
   },
   {
     "title": "Equipment Maintenance Reminder",
