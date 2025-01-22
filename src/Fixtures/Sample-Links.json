@@ -48,18 +48,6 @@
         "icon": "Star"
     },
     {
-        "title": "Equipment Maintenance",
-        "description": "Schedule and track maintenance for key equipment to minimize downtime.",
-        "category": "Maintenance",
-        "icon": "Tools"
-    },
-    {
-        "title": "Training Management",
-        "description": "Assign and track employee training sessions to ensure staff readiness and compliance.",
-        "category": "Training",
-        "icon": "GraduationCap"
-    },
-    {
         "title": "Payroll Integration",
         "description": "Integrate payroll processing with scheduling and labor cost tracking for seamless operations.",
         "category": "Admin",

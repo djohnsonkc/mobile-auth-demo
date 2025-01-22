@@ -55,6 +55,12 @@ const Home = () => {
 
   }, []);
 
+  // scroll to top when menu changes
+  useEffect(() => {
+    const deviceBody = document.querySelector('.device-body');
+    deviceBody.scrollTo(0, 0)
+  }, [selectedMenu]);
+
   const DynamicIcon = ({ iconName, size = 24, color = 'black' }) => {
     // Check if the icon exists in the FeatherIcons object
     const IconComponent = FeatherIcons[iconName];
@@ -136,15 +142,14 @@ const Home = () => {
           <div className="title">
             {selectedMenu?.title}
           </div>
-          <div className="hamburger">
 
-            <div className="dropdown">
-              <button className="btn btn-link dropdown-toggle no-caret no-focus" type="button" id="hamburgerMenu" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
-                <img src="hamburger.png" alt="Menu" />
-              </button>
-
-            </div>
+          <div className="">
+            <button className="btn btn-link dropdown-toggle no-caret no-focus" type="button" id="hamburgerMenu" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+              <img src="hamburger.png" alt="Menu" />
+            </button>
           </div>
+
+
         </div>
 
         <div className="device-body">
@@ -192,6 +197,7 @@ const Home = () => {
             }
           </div>
 
+          {/* THIS MUST STAY INSIDE OF device-body */}
           <div
             className="offcanvas offcanvas-start"
             tabIndex="-1"
