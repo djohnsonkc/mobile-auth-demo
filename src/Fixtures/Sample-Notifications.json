@@ -1,5 +1,11 @@
 [
   {
+    "title": "Shift Swap Request",
+    "description": "Jane Doe has requested to swap her Saturday evening shift with John Smith.",
+    "category": "Staffing",
+    "icon": "Shuffle"
+  },
+  {
     "title": "Inventory Low on Key Items",
     "description": "Stock of chicken breasts is running low. Order soon to avoid running out during service.",
     "category": "Inventory",
@@ -22,12 +28,6 @@
     "description": "A diner praised the excellent service provided by Sarah during dinner service.",
     "category": "Feedback",
     "icon": "Star"
-  },
-  {
-    "title": "Shift Swap Request",
-    "description": "Jane Doe has requested to swap her Saturday evening shift with John Smith.",
-    "category": "Staffing",
-    "icon": "Shuffle"
   },
   {
     "title": "Menu Item Popularity Report",

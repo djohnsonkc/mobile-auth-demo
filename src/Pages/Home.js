@@ -7,7 +7,15 @@ import CountdownTimer from "../Components/CountdownTimer";
 // import { Lock, AtSign, Search, MessageCircle, User, Bell, ChevronRight, Briefcase, Calendar, BarChart2 } from "react-feather";
 import * as FeatherIcons from 'react-feather';
 import sampleNotifications from '../Fixtures/Sample-Notifications.json'
+import sampleLinks from '../Fixtures/Sample-Links.json'
 import "./Styles.css";
+
+const sampleMenu = [
+  { name: 'Notifications', title: 'Notifications', icon: 'Bell', data: sampleNotifications },
+  { name: 'Menu', title: 'PowerCenter Menu', icon: 'List', data: sampleLinks },
+  { name: 'Chat', title: 'Chat Conversations', icon: 'MessageCircle', data: [] },
+  // { name: 'Dashboards', title: 'Dashboards', icon: 'BarChart', data: [] },
+]
 
 const Home = () => {
 
@@ -15,6 +23,7 @@ const Home = () => {
 
   const [userData, setUserData] = useState(null)
   const [isLoading, setIsLoading] = useState(true)
+  const [selectedMenu, setSelectedMenu] = useState(sampleMenu[0])
 
   useEffect(() => {
 
@@ -32,7 +41,7 @@ const Home = () => {
       else {
         // userManager.signinRedirect()
 
-        if(showAnyway) {
+        if (showAnyway) {
           setUserData({ access_token: "faked" })
         }
         else {
@@ -49,7 +58,7 @@ const Home = () => {
   const DynamicIcon = ({ iconName, size = 24, color = 'black' }) => {
     // Check if the icon exists in the FeatherIcons object
     const IconComponent = FeatherIcons[iconName];
-  
+
     // If the icon exists, render it; otherwise, show a fallback
     return IconComponent ? (
       <IconComponent size={size} color={color} />
@@ -125,14 +134,11 @@ const Home = () => {
             <img src="rosnet-icon.svg" alt="Left Icon" />
           </div>
           <div className="title">
-            Notifications
+            {selectedMenu?.title}
           </div>
           <div className="hamburger">
 
             <div className="dropdown">
-              {/* <button className="btn btn-link dropdown-toggle no-caret no-focus" type="button" id="hamburgerMenu" data-bs-toggle="dropdown" aria-expanded="false">
-                <img src="hamburger.png" alt="Menu" />
-              </button> */}
               <button className="btn btn-link dropdown-toggle no-caret no-focus" type="button" id="hamburgerMenu" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
                 <img src="hamburger.png" alt="Menu" />
               </button>
@@ -148,11 +154,11 @@ const Home = () => {
                 <div className="d-flex flex-column align-items-center">
                   <div className="w-100">
 
-                    {sampleNotifications.map((notif, index) => {
+                    {selectedMenu?.data?.map((notif, index) => {
                       return (
                         <div
                           key={index}
-                          className="list-item hover-effect-with-pointer mb-1"
+                          className="list-item hover-effect-with-pointer mb-2"
                         // onClick={() => navigate('/admin/assign-share-list')}
                         >
                           <div className="d-flex flex-row align-items-center gap-2">
@@ -203,7 +209,6 @@ const Home = () => {
             }}
           >
             <div className="offcanvas-header">
-              {/* <h5 className="offcanvas-title" id="offcanvasExampleLabel">RosApp Menu</h5> */}
               <img src="rosnet-logo.png" alt="Logo" style={{ marginTop: 10, maxWidth: 200 }} />
               <button
                 type="button"
@@ -214,7 +219,6 @@ const Home = () => {
             </div>
             <div className="offcanvas-body">
 
-              
               <ul className="list-unstyled text-white">
                 <li className="mb-2">
                   <a
@@ -226,7 +230,12 @@ const Home = () => {
                     Identity Provider Settings
                   </a>
                 </li>
-                <li>
+                <li className="mb-2">
+                  <a href="" className="text-white text-decoration-none">
+                    Account
+                  </a>
+                </li>
+                <li className="mb-2">
                   <a href="/logout" className="text-white text-decoration-none">
                     Logout
                   </a>
@@ -237,36 +246,26 @@ const Home = () => {
           </div>
         </div>
 
+
         <div className="device-footer">
           <div className="d-flex justify-content-between text-center align-items-center w-100">
-
-            <div className="footer-item selected">
-              <div className="icon-wrapper">
-              <DynamicIcon iconName="Bell" color="white" size={24} />
+            {sampleMenu.map((item) => (
+              <div
+                key={item.name}
+                className={`footer-item ${selectedMenu.name === item.name ? 'selected' : ''}`}
+              >
+                <div className="icon-wrapper" onClick={() => setSelectedMenu(item)}>
+                  <DynamicIcon iconName={item.icon} color="white" size={24} />
+                </div>
+                <p className="footer-label">{item.name}</p>
               </div>
-              <p className="footer-label">Notifications</p>
-            </div>
-            <div className="footer-item">
-              <div className="icon-wrapper">
-              <DynamicIcon iconName="BarChart2"  color="white" size={24} />
-              </div>
-              <p className="footer-label">Dashboards</p>
-            </div>
-            <div className="footer-item">
-              <div className="icon-wrapper">
-              <DynamicIcon iconName="MessageCircle"  color="white" size={24} />
-              </div>
-              <p className="footer-label">Chat</p>
-            </div>
-            <div className="footer-item">
-              <div className="icon-wrapper">
-              <DynamicIcon iconName="User" color="white" size={24} />
-              </div>
-              <p className="footer-label">Profile</p>
-            </div>
+            ))}
           </div>
         </div>
+
       </div>
+
+
 
 
       <div className="modal" id="settingsModal">

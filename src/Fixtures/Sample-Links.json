@@ -1,0 +1,68 @@
+[
+    {
+        "title": "PowerCenter Portal & Dashboards",
+        "description": "Access a centralized portal for managing key business operations and visualizing performance through interactive dashboards.",
+        "category": "Analytics",
+        "icon": "BarChart"
+    },
+    {
+        "title": "Inventory Tracking",
+        "description": "Monitor stock levels in real-time and receive alerts for low inventory on key items.",
+        "category": "Inventory",
+        "icon": "List"
+    },
+    {
+        "title": "Employee Scheduling",
+        "description": "Create and manage staff schedules efficiently with built-in shift swap and availability tools.",
+        "category": "Staffing",
+        "icon": "Users"
+    },
+    {
+        "title": "Sales Reporting",
+        "description": "Generate detailed sales reports to analyze trends and improve profitability.",
+        "category": "Analytics",
+        "icon": "BarChart"
+    },
+    {
+        "title": "Menu Management",
+        "description": "Easily update menu items, prices, and descriptions across locations in real-time.",
+        "category": "Menu",
+        "icon": "Edit"
+    },
+    {
+        "title": "Labor Cost Monitoring",
+        "description": "Track labor costs against sales to optimize staffing levels and maintain profitability.",
+        "category": "Finance",
+        "icon": "DollarSign"
+    },
+    {
+        "title": "Compliance Management",
+        "description": "Keep track of health inspections, certifications, and other compliance-related tasks.",
+        "category": "Compliance",
+        "icon": "UserCheck"
+    },
+    {
+        "title": "Customer Feedback Insights",
+        "description": "Gather and analyze customer feedback to enhance service quality and satisfaction.",
+        "category": "Feedback",
+        "icon": "Star"
+    },
+    {
+        "title": "Equipment Maintenance",
+        "description": "Schedule and track maintenance for key equipment to minimize downtime.",
+        "category": "Maintenance",
+        "icon": "Tools"
+    },
+    {
+        "title": "Training Management",
+        "description": "Assign and track employee training sessions to ensure staff readiness and compliance.",
+        "category": "Training",
+        "icon": "GraduationCap"
+    },
+    {
+        "title": "Payroll Integration",
+        "description": "Integrate payroll processing with scheduling and labor cost tracking for seamless operations.",
+        "category": "Admin",
+        "icon": "FileText"
+    }
+]
