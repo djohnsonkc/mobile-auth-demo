@@ -10,9 +10,9 @@ import { UserManager } from 'oidc-client-ts';
 //     post_logout_redirect_uri: process.env.REACT_APP_OAUTH_POST_LOGOUT_REDIRECT_URI
 // }
 
-// localhost uses dev
+// localhost uses dev (HEADS UP: must be on VPN for dev)
 let defaultSettings = {
-    authority: 'https://iam.rosnetdev.com',
+    authority: 'https://iam.rosnetqa.com',
     client_id: 'mobile.RosApp.Rosnet',
     redirect_uri:  'http://localhost:3000/callback',
     response_type: 'code',

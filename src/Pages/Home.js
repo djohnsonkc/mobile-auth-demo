@@ -6,6 +6,9 @@ import apiHelper from '../Helpers/OAuth/apiHelper';
 import CountdownTimer from "../Components/CountdownTimer";
 // import { Lock, AtSign, Search, MessageCircle, User, Bell, ChevronRight, Briefcase, Calendar, BarChart2 } from "react-feather";
 import * as FeatherIcons from 'react-feather';
+
+import PillButtons from '../Components/PillButtons/PillButtons'
+
 import sampleNotifications from '../Fixtures/Sample-Notifications.json'
 import sampleLinks from '../Fixtures/Sample-Links.json'
 import "./Styles.css";
@@ -17,6 +20,21 @@ const sampleMenu = [
   // { name: 'Dashboards', title: 'Dashboards', icon: 'BarChart', data: [] },
 ]
 
+const pillOptionsForNotifications = [
+  { value: 1, label: "Today" },
+  { value: 2, label: "Yesterday" },
+  { value: 3, label: "Last Week" },
+]
+const pillOptionsForMenu = [
+  { value: 1, label: "Favorites" },
+  { value: 2, label: "Recent" },
+  { value: 3, label: "Food" },
+  { value: 4, label: "Labor" },
+  { value: 5, label: "Forecasting" },
+  { value: 6, label: "Reports" },
+]
+
+
 const Home = () => {
 
   const navigate = useNavigate();
@@ -24,6 +42,7 @@ const Home = () => {
   const [userData, setUserData] = useState(null)
   const [isLoading, setIsLoading] = useState(true)
   const [selectedMenu, setSelectedMenu] = useState(sampleMenu[0])
+  const [pillOptions, setPillOptions] = useState(pillOptionsForNotifications)
 
   useEffect(() => {
 
@@ -59,6 +78,16 @@ const Home = () => {
   useEffect(() => {
     const deviceBody = document.querySelector('.device-body');
     deviceBody.scrollTo(0, 0)
+
+    if (selectedMenu.name === "Notifications") {
+      setPillOptions(pillOptionsForNotifications)
+    }
+    else if (selectedMenu.name === "Menu") {
+      setPillOptions(pillOptionsForMenu)
+    }
+    else {
+      setPillOptions([])
+    }
   }, [selectedMenu]);
 
   const DynamicIcon = ({ iconName, size = 24, color = 'black' }) => {
@@ -144,6 +173,9 @@ const Home = () => {
           </div>
 
           <div className="">
+
+            <DynamicIcon iconName={"Search"} size={20} color={'white'} />
+ 
             <button className="btn btn-link dropdown-toggle no-caret no-focus" type="button" id="hamburgerMenu" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
               <img src="hamburger.png" alt="Menu" />
             </button>
@@ -158,6 +190,18 @@ const Home = () => {
               <>
                 <div className="d-flex flex-column align-items-center">
                   <div className="w-100">
+
+                    <PillButtons
+                      // if you want to pre-select one of the options in your list
+                      defaultOptions={[pillOptions[0]]}
+                      allowMultiple={false}
+                      allowHover={true}
+                      options={pillOptions}
+                      overflowHidden={true}
+                      onSelectOption={(list) => console.log("list", list)}
+                    />
+
+
 
                     {selectedMenu?.data?.map((notif, index) => {
                       return (

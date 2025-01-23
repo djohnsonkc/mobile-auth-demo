@@ -1,0 +1,118 @@
+/* some scrolling for effect */
+.pill-container {
+    height: auto;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-wrap: nowrap; /* Prevent wrapping */
+    overflow-x: scroll; /* Allow horizontal scrolling */
+    scrollbar-width: none; /* Hide scrollbar for Firefox */
+    -ms-overflow-style: none; /* Hide scrollbar for IE and Edge */
+}
+
+.pill-container .d-flex::-webkit-scrollbar {
+    display: none; /* Hide scrollbar for WebKit browsers */
+}
+
+/* Offcanvas width for mobile devices (100% width) */
+@media (max-width: 767px) {
+    .pill-container {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+}
+
+/* use this class when you want the animation slideup to be contained, or don't have pills with dropdowns */
+.pill-container.overflow-hidden {
+    overflow: hidden;
+}
+
+/* pill button dropdown  */
+.pill-container .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    z-index: 1000 !important;
+    border-radius: 5px !important;
+}
+
+/* Buttons inside the dropdown */
+.pill-container .dropdown-content button {
+    padding: 0px 0px 0px !important;
+    display: block;
+    margin-bottom: 10px !important;
+    text-decoration: none !important;
+}
+
+.pill-container .dropdown-content button:hover {
+    text-decoration: none !important;
+}
+
+.pill-container .dropdown-content .button-container {
+    padding: 5px 5px 1px 10px;
+}
+
+.pill-container .dropdown-content .button-container:hover {
+    background-color: #eef2f5 !important;
+}
+
+/* Show the dropdown content on hover */
+.pill-container .item-pill:hover .dropdown-content {
+    display: block;
+}
+
+/* pagination overrides */
+.pill-container .page-link {
+    display: inline !important;
+    border: none !important;
+}
+
+
+.pill-container .item-pill {
+    background-color: white;
+    border: solid 1px lightgray;
+    border-radius: 35px;
+    padding: 6px 14px 6px 14px !important;
+    font-size: 14px;
+    font-weight: 500;
+    /* prevent selecting the text */
+    user-select: none;
+    white-space: nowrap;
+}
+
+.pill-container .item-pill:hover {
+    cursor: pointer;
+    background-color: #eef2f5;
+}
+.pill-container .item-pill.no-hover:hover {
+    cursor: default;
+    background-color: inherit;
+}
+
+.pill-container .item-pill.selected {
+    background-color: #67A617 !important;
+    color: white !important;
+}
+.pill-container .item-pill.selected.bordered {
+    background-color: #eef2f5 !important;
+    border: solid 1px darkgray !important;
+    color: #333f48 !important;
+    /* font-weight: bold; */
+}
+
+.pill-container .no-caret.dropdown-toggle {
+    padding: 0px !important;
+    margin-top: -2px;
+    margin-left: 5px;
+    margin-right: -5px;
+}
+.pill-container .no-caret.dropdown-toggle::after {
+    display: none !important;
+}
+
+.pill-container > .no-caret.dropdown-toggle img, svg {
+
+} 
