@@ -40,6 +40,7 @@
 .device-header .icon {
   display: flex;
   align-items: center;
+  width: 60px; /* this helps the header title be more center aligned with search icon */
 }
 
 .device-header .icon img {

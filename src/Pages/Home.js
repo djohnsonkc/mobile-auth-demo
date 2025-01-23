@@ -15,8 +15,8 @@ import "./Styles.css";
 
 const sampleMenu = [
   { name: 'Notifications', title: 'Notifications', icon: 'Bell', data: sampleNotifications },
-  { name: 'Menu', title: 'PowerCenter Menu', icon: 'List', data: sampleLinks },
-  { name: 'Chat', title: 'Chat Conversations', icon: 'MessageCircle', data: [] },
+  { name: 'Menu', title: 'Menu', icon: 'List', data: sampleLinks },
+  { name: 'Chat', title: 'Chat', icon: 'MessageCircle', data: [] },
   // { name: 'Dashboards', title: 'Dashboards', icon: 'BarChart', data: [] },
 ]
 
