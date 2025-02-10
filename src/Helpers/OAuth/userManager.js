@@ -18,6 +18,8 @@ let defaultSettings = {
     response_type: 'code',
     scope: 'openid profile ROS.MS.SalesService',
     post_logout_redirect_uri: 'http://localhost:3000/logout-callback',
+    automaticSilentRenew: false, // Prevent silent renew after logout
+    revokeAccessTokenOnSignout: true, // Revoke tokens during logout
 }
 
 // Heroku uses QA
@@ -29,6 +31,8 @@ if (window.location.host.includes("herokuapp.com")) {
         response_type: 'code',
         scope: 'openid profile ROS.MS.SalesService',
         post_logout_redirect_uri: 'https://mobile-auth-demo-0cca0203e2fb.herokuapp.com/logout-callback',
+        automaticSilentRenew: false, // Prevent silent renew after logout
+        revokeAccessTokenOnSignout: true, // Revoke tokens during logout
     }
 }
 

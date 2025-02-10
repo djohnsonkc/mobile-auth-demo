@@ -9,6 +9,7 @@ import "./Styles/Section.css";
 import PageNotFound from './Pages/404/404';
 import Landing from './Pages/Landing';
 import Home from './Pages/Home';
+// import Test from './Pages/Test';
 
 import Callback from "./Pages/OAuth/Callback"; // 
 import Logout from "./Pages/OAuth/Logout"; // 
@@ -31,7 +32,7 @@ function App() {
                     <Route element={<Landing />} path="/" />
 
                     <Route element={<Home />} path="/home" />
-
+                    {/* <Route element={<Test />} path="/test" /> */}
 
                     <Route element={<Callback />} path="/callback" />
                     <Route element={<Logout />} path="/logout" />

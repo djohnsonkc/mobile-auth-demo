@@ -30,8 +30,7 @@ const pillOptionsForMenu = [
   { value: 2, label: "Recent" },
   { value: 3, label: "Food" },
   { value: 4, label: "Labor" },
-  { value: 5, label: "Forecasting" },
-  { value: 6, label: "Reports" },
+  { value: 5, label: "..." }
 ]
 
 
